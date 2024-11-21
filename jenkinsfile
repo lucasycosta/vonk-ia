@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Construir e rodar o docker-compose
-                    bat 'docker-compose up -d' // Construir e rodar no modo detached
+                    sh 'docker-compose up -d' 
                 }
             }
         }
