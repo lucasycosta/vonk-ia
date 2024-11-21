@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                // Clonar o repositório onde está o arquivo docker-compose.yml
+                git 'https://seu-repositorio-git-url.git'
+            }
+        }
+        
+        stage('Build and Run Docker Compose') {
+            steps {
+                script {
+                    // Construir e rodar o docker-compose
+                    sh 'docker-compose up -d' // Construir e rodar no modo detached
+                }
+            }
+        }
+    }
+}
